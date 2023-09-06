@@ -6,14 +6,15 @@ class BasicCommands(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
-    @commands.command(name='invite')
-    async def send_invite(self, ctx):
-        invite_link = f"https://discord.com/oauth2/authorize?client_id={CONFIG['DISCORD_CLIENT_ID']}&scope=bot&permissions=3148800"
-        await ctx.author.send(f"Here's the invite link for the bot: {invite_link}")
-
     @commands.command(name='ping')
-    async def ping(self, ctx):
-        await ctx.send(f"Pong! {round(self.bot.latency * 1000)}ms")
+    async def _ping(self, ctx):
+        await ctx.send("Pong!")
+
+    @commands.command(name='invite')
+    async def _invite(self, ctx):
+        client_id = CONFIG.get("DISCORD_CLIENT_ID")
+        invite_link = f"https://discord.com/oauth2/authorize?client_id={client_id}&scope=bot"
+        await ctx.author.send(f"Invite me to your server using this link: {invite_link}")
 
 
 def setup(bot):

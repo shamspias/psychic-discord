@@ -1,6 +1,6 @@
-from discord.ext import commands
 from discord import Intents
-from cogs.music.player import MusicPlayer
+from discord.ext import commands
+
 from config.development import CONFIG
 
 intents = Intents.all()
@@ -12,5 +12,6 @@ async def on_ready():
     print(f'{bot.user.name} has connected to Discord!')
 
 
-bot.add_cog(MusicPlayer(bot))
+bot.load_extension("cogs.music.player")
+bot.load_extension("cogs.basic_commands")
 bot.run(CONFIG["BOT_TOKEN"])
