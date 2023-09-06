@@ -1,7 +1,13 @@
+import os
+from dotenv import load_dotenv
+
+# Load the .env file
+load_dotenv()
+
 CONFIG = {
-    "BOT_TOKEN": "YOUR_DEV_DISCORD_BOT_TOKEN",
-    "DATABASE_URL": "YOUR_DEV_DATABASE_CONNECTION_STRING",
-    "YOUTUBE_API_KEY": "YOUR_DEV_YOUTUBE_API_KEY",
-    "SPOTIFY_CLIENT_ID": "YOUR_DEV_SPOTIFY_CLIENT_ID",
-    "SPOTIFY_CLIENT_SECRET": "YOUR_DEV_SPOTIFY_CLIENT_SECRET"
+    "BOT_TOKEN": os.getenv("BOT_TOKEN"),
+    "DATABASE_URL": os.getenv("DATABASE_URL"),
+    "YOUTUBE_API_KEY": os.getenv("YOUTUBE_API_KEY"),
+    "SPOTIFY_CLIENT_ID": os.getenv("SPOTIFY_CLIENT_ID"),
+    "SPOTIFY_CLIENT_SECRET": os.getenv("SPOTIFY_CLIENT_SECRET")
 }
