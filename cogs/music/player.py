@@ -57,7 +57,8 @@ class MusicPlayer(commands.Cog):
         """Add a song to the user's playlist."""
         song_url = self.youtube_integration.search_song(song_name)
         if song_url:
-            self.playlist_manager.add_song_to_playlist(song_name, song_url)
+            playlist_manager = PlaylistManager(ctx.author.id)
+            playlist_manager.add_song_to_playlist(song_name, song_url)
             await ctx.send(f"Added {song_name} to your playlist!")
         else:
             await ctx.send(f"Couldn't find {song_name} on YouTube.")
