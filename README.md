@@ -54,8 +54,11 @@ provides playlist management features for individual users, and more!
     ```bash
     python -m database.create_tables
     ```
+6. **Fix Privileged Gateway Intents**
+    - Go to [Discord Application Portal](https://discord.com/developers/applications/)
+    - Select your bot and go to `Privileged Gateway Intents` enable three Privileged
 
-6. **Run the Bot**:
+7. **Run the Bot**:
     ```bash
     python main.py
     ```
