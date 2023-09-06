@@ -96,5 +96,5 @@ class MusicPlayer(commands.Cog):
         await ctx.send("Shuffled the song queue.")
 
 
-def setup(bot):
-    bot.add_cog(MusicPlayer(bot))
+async def setup(bot):
+    await bot.add_cog(MusicPlayer(bot))
