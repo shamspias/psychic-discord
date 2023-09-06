@@ -1,4 +1,3 @@
-import discord
 from discord.ext import commands
 from cogs.music.player import MusicPlayer
 from config.development import CONFIG
