@@ -3,13 +3,14 @@ from discord import FFmpegPCMAudio
 from integrations.youtube import YouTubeIntegration
 from cogs.music.queue import SongQueue
 from cogs.playlist.manager import PlaylistManager
+from config import CONFIG
 
 
 class MusicPlayer(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
         self.song_queue = SongQueue()
-        self.youtube_integration = YouTubeIntegration(api_key="YOUR_YOUTUBE_API_KEY")
+        self.youtube_integration = YouTubeIntegration(api_key=CONFIG["YOUTUBE_API_KEY"])
         self.current_voice_channel = None
         self.playlist_manager = None
 
