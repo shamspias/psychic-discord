@@ -20,11 +20,15 @@ async def test(ctx):
     await ctx.send("Test command is working!")
 
 
-def load_cogs():
-    print("Test")
-    bot.load_extension("cogs.music.player")
-    bot.load_extension("cogs.basic_commands")
+async def load_cogs():
+    print("Loading cogs...")
+    await bot.load_extension("cogs.music.player")
+    await bot.load_extension("cogs.basic_commands")
+    print("Cogs loaded successfully!")
 
 
-# If you have a token in your CONFIG
+# Load the cogs before running the bot
+asyncio.get_event_loop().run_until_complete(load_cogs())
+
+# Run the bot
 bot.run(CONFIG["BOT_TOKEN"])

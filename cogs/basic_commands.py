@@ -17,5 +17,5 @@ class BasicCommands(commands.Cog):
         await ctx.author.send(f"Invite me to your server using this link: {invite_link}")
 
 
-def setup(bot):
-    bot.add_cog(BasicCommands(bot))
+async def setup(bot):
+    await bot.add_cog(BasicCommands(bot))
