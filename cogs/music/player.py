@@ -94,3 +94,7 @@ class MusicPlayer(commands.Cog):
         """Shuffle the song queue."""
         self.song_queue.shuffle()
         await ctx.send("Shuffled the song queue.")
+
+
+def setup(bot):
+    bot.add_cog(MusicPlayer(bot))
