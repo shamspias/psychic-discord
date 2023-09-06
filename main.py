@@ -1,7 +1,7 @@
 import discord
 from discord.ext import commands
 from cogs.music.player import MusicPlayer
-from config import development as config
+from config.development import CONFIG
 
 bot = commands.Bot(command_prefix='!')
 
@@ -12,4 +12,4 @@ async def on_ready():
 
 
 bot.add_cog(MusicPlayer(bot))
-bot.run(config.CONFIG["BOT_TOKEN"])
+bot.run(CONFIG["BOT_TOKEN"])
