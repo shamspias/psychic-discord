@@ -2,3 +2,4 @@ discord.py
 sqlalchemy
 requests
 pymysql
+python-dotenv
