@@ -1,5 +1,6 @@
 discord.py
 sqlalchemy
 requests
+PyNaCl
 pymysql
 python-dotenv
